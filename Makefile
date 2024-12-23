@@ -11,7 +11,7 @@ PRINTF_UTIL_FILES := block_util.c init_util.c options_util.c processing_util1.c 
 PRINTF_SRCS := $(addprefix src/spec_funcs/,$(PRINTF_SPEC_FILES)) $(addprefix src/utils/,$(PRINTF_UTIL_FILES)) src/ft_printf.c
 ##
 
-IO_FILES := ft_putchar.c ft_putendl_fd.c ft_putnbr.c ft_putshex.c ft_putstr_fd.c ft_putchar_fd.c ft_putlhex.c ft_putnbr_fd.c ft_putstr.c	
+IO_FILES := ft_putchar.c ft_putendl_fd.c ft_putnbr.c ft_putshex.c ft_putstr_fd.c ft_putchar_fd.c ft_putlhex.c ft_putnbr_fd.c ft_putstr.c ft_print_arr.c 
 IO_SRCS := $(IO_FILES) $(addprefix printf/,$(PRINTF_SRCS))
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -21,7 +21,7 @@ IS_SRCS := $(IS_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #lst--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-LST_FILES := ft_lstadd_back_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstlast_bonus.c ft_lstnew_bonus.c
+LST_FILES := ft_lstadd_back.c ft_lstdelone.c ft_lstmap.c ft_twlstadd_back.c ft_twlstdelone.c ft_twlstnew.c ft_lstadd_front.c ft_lstiter.c ft_lstnew.c ft_twlstadd_front.c ft_twlsthead.c ft_twlstsize.c ft_lstclear.c ft_lstlast.c ft_lstsize.c ft_twlstclear.c ft_twlstlast.c ft_issortedtwlst.c
 LST_SRCS := $(LST_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,11 +41,21 @@ STR_SRCS := $(STR_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #util--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-UTIL_FILES := ft_all.c ft_any.c ft_max.c ft_min.c ft_tolower.c ft_toupper.c
+UTIL_FILES := ft_all.c ft_any.c ft_max.c ft_min.c ft_tolower.c ft_toupper.c ft_swap.c ft_exfree.c 
 UTIL_SRCS := $(UTIL_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-SRCS := $(addprefix io/,$(IO_SRCS)) $(addprefix is/,$(IS_SRCS)) $(addprefix lst/,$(LST_SRCS)) $(addprefix mem/,$(MEM_SRCS)) $(addprefix num/,$(NUM_SRCS)) $(addprefix str/,$(STR_SRCS)) $(addprefix util/,$(UTIL_SRCS))
+#algo--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ALGO_FILES := ft_compress.c ft_sort.c ft_quadratic_transform.c 
+ALGO_SRCS := $(ALGO_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#arr--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ARR_FILES := ft_dup_arr.c  ft_indexof.c  ft_unique_arr.c
+ARR_SRCS := $(ARR_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SRCS := $(addprefix io/,$(IO_SRCS)) $(addprefix is/,$(IS_SRCS)) $(addprefix lst/,$(LST_SRCS)) $(addprefix mem/,$(MEM_SRCS)) $(addprefix num/,$(NUM_SRCS)) $(addprefix str/,$(STR_SRCS)) $(addprefix util/,$(UTIL_SRCS)) $(addprefix algo/,$(ALGO_SRCS)) $(addprefix arr/,$(ARR_SRCS)) 
 OBJS := $(SRCS:.c=.o)
 
 all: $(NAME) 

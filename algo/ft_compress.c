@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util.h                                          :+:      :+:    :+:   */
+/*   ft_compress.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 18:54:00 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/23 15:38:14 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/23 23:49:46 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTIL_H
-# define FT_UTIL_H
+#include "ft_algo.h"
 
-# include <limits.h>
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdlib.h>
+int	ft_compress(int *arr, int n)
+{
+	int	*copied_arr;
+	int	m;
+	int	i;
+	int	index;
 
-int		ft_min(int argn, ...);
-int		ft_max(int argn, ...);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-int		ft_all(char *src, int (*f)(int));
-int		ft_any(char *src, int (*f)(int));
-int		ft_swap(void *a, void *b, size_t n);
-void	ft_exfree(int argn, ...);
-
-#endif
+	copied_arr = dup_arr(arr, n);
+	m = unique_arr(copied_arr, n);
+	i = 0;
+	while (i < n)
+	{
+		index = ft_indexof(copied_arr, m, arr[i]);
+		arr[i] = index;
+		i++;
+	}
+	return (m);
+}

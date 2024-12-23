@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util.h                                          :+:      :+:    :+:   */
+/*   ft_exfree.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 18:54:00 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/23 18:51:05 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/23 22:43:07 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTIL_H
-# define FT_UTIL_H
+#include "ft_util.h"
 
-# include <limits.h>
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdlib.h>
+void	ft_exfree(int argn, ...)
+{
+	va_list	ap;
+	int		i;
 
-int		ft_min(int argn, ...);
-int		ft_max(int argn, ...);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-int		ft_all(char *src, int (*f)(int));
-int		ft_any(char *src, int (*f)(int));
-int		ft_swap(void *a, void *b, size_t n);
-void	ft_exfree(int argn, ...);
-
-#endif
+	i = 0;
+	va_start(ap, argn);
+	while (i < argn)
+	{
+		free(va_arg(ap, void *));
+		i++;
+	}
+	va_end(ap);
+	return ;
+}

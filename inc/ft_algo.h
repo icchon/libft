@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util.h                                          :+:      :+:    :+:   */
+/*   ft_algo.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 18:54:00 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/23 15:44:37 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/23 23:49:02 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTIL_H
-# define FT_UTIL_H
+#ifndef FT_ALGO_H
+# define FT_ALGO_H
 
+# include "ft_arr.h"
 # include <limits.h>
-# include <stdarg.h>
-# include <stddef.h>
 # include <stdlib.h>
 
-int		ft_min(int argn, ...);
-int		ft_max(int argn, ...);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-int		ft_all(char *src, int (*f)(int));
-int		ft_any(char *src, int (*f)(int));
-int		ft_swap(void *a, void *b, size_t n);
-void	ft_exfree(int argn, ...);
+int		ft_compress(int *arr, int n);
+void	ft_sort(int *arr, int n, int reversed);
+int		ft_quadratic_transform(int a, int b, int c, int x);
 
 #endif

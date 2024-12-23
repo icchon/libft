@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util.h                                          :+:      :+:    :+:   */
+/*   ft_twlstclear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 18:54:00 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/23 12:05:59 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/23 12:08:28 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTIL_H
-# define FT_UTIL_H
+#include "ft_lst.h"
 
-# include <limits.h>
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdlib.h>
+void	ft_twlstclear(t_twlist **lst, void (*del)(void *))
+{
+	t_twlist	*node;
+	t_twlist	*next;
 
-int		ft_min(int argn, ...);
-int		ft_max(int argn, ...);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-int		ft_all(char *src, int (*f)(int));
-int		ft_any(char *src, int (*f)(int));
-int		ft_swap(void *a, void *b, size_t n);
-void	ft_exfree(int argn, ...);
-
-#endif
+	node = ft_twlsthead(*lst);
+	while (node != NULL)
+	{
+		del(node->content);
+		next = node->next;
+		free(node);
+		node = next;
+	}
+	*lst = NULL;
+	return ;
+}

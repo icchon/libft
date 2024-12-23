@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_util.h                                          :+:      :+:    :+:   */
+/*   ft_twlstadd_back.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 18:54:00 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/23 11:57:38 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/23 14:25:21 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTIL_H
-# define FT_UTIL_H
+#include "ft_lst.h"
+#include <stdio.h>
 
-# include <limits.h>
-# include <stdarg.h>
-# include <stddef.h>
-# include <stdlib.h>
+void	ft_twlstadd_back(t_twlist **lst, t_twlist *new)
+{
+	t_twlist	*last_node;
 
-int		ft_min(int argn, ...);
-int		ft_max(int argn, ...);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
-int		ft_all(char *src, int (*f)(int));
-int		ft_any(char *src, int (*f)(int));
-int		ft_swap(void *a, void *b, size_t n);
-void	ft_exfree(int argn, ...);
-
-#endif
+	last_node = ft_twlstlast(*lst);
+	if (last_node == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	new->prev = last_node;
+	new->next = NULL;
+	last_node->next = new;
+	return ;
+}
