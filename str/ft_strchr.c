@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:33 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/10/13 17:27:23 by icchon            #+#    #+#             */
+/*   Updated: 2024/12/22 14:58:52 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_str.h"
 
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
-
-#endif
+char	*ft_strchr(const char *s, int c)
+{
+	if (s == NULL)
+		return (NULL);
+	while (*s)
+	{
+		if (*s == (unsigned char)c)
+		{
+			return ((char *)s);
+		}
+		s++;
+	}
+	if (*s == (unsigned char)c)
+		return ((char *)s);
+	return (NULL);
+}

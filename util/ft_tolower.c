@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:33 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/10/13 18:06:55 by icchon            #+#    #+#             */
+/*   Updated: 2024/12/22 14:28:32 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_util.h"
 
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
+static int	ft_isupper(int c)
+{
+	return ('A' <= c && c <= 'Z');
+}
 
-#endif
+int	ft_tolower(int c)
+{
+	if (ft_isupper(c))
+	{
+		return (c + ('a' - 'A'));
+	}
+	return (c);
+}

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_ischain.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:33 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/11/10 08:45:19 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/22 14:05:20 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_is.h"
 
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
+int	ft_ischain(char *src, char c)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (src[i])
+	{
+		if (src[i] != c)
+			return (0);
+		i++;
+	}
+	return (1);
+}

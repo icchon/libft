@@ -1,44 +1,62 @@
 NAME   = libft.a
 CC     = cc
 CFLAGS = -Wall -Wextra -Werror 
-SRCS = ft_strlen.c ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
-		ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c \
-		ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
-		ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c \
-		ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
-		 ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c \
-		ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c
-BONUS_SRCS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c \
- ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c 
-ORIGINAL_SRCS = ft_get_digit_cnt.c ft_putlhex.c ft_putnbr.c ft_putshex.c ft_putstr.c ft_putchar.c ft_contain.c ft_calc_next_chr.c ft_itolhex.c ft_itoshex.c ft_utoa.c \
-	ft_max.c ft_min.c ft_chr_to_str.c ft_calc_next_str.c ft_ismatch.c ft_create_chain.c ft_precisely_itoa.c ft_precisely_utoa.c ft_precisely_itolhex.c \
-	ft_precisely_itoshex.c ft_ischain.c ft_chrset.c ft_all.c ft_any.c 
+INC = inc
 
-OBJS = $(SRCS:.c=.o)
-ORIGINAL_OBJS = $(ORIGINAL_SRCS:.c=.o)
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+#io--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-ifdef WITH_BONUS
-OBJS += $(BONUS_OBJS)
-endif
+##printf
+PRINTF_SPEC_FILES := ft_create_c.c ft_create_d.c ft_create_i.c ft_create_p.c ft_create_s.c ft_create_u.c ft_create_sx.c ft_create_lx.c ft_create_nothing.c ft_create_percent.c 
+PRINTF_UTIL_FILES := block_util.c init_util.c options_util.c processing_util1.c processing_util2.c 
+PRINTF_SRCS := $(addprefix src/spec_funcs/,$(PRINTF_SPEC_FILES)) $(addprefix src/utils/,$(PRINTF_UTIL_FILES)) src/ft_printf.c
+##
+
+IO_FILES := ft_putchar.c ft_putendl_fd.c ft_putnbr.c ft_putshex.c ft_putstr_fd.c ft_putchar_fd.c ft_putlhex.c ft_putnbr_fd.c ft_putstr.c	
+IO_SRCS := $(IO_FILES) $(addprefix printf/,$(PRINTF_SRCS))
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#is--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IS_FILES := ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischain.c ft_isdigit.c ft_ismatch.c ft_isprint.c
+IS_SRCS := $(IS_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#lst--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LST_FILES := ft_lstadd_back_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c ft_lstdelone_bonus.c ft_lstlast_bonus.c ft_lstnew_bonus.c
+LST_SRCS := $(LST_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#mem--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MEM_FILES := ft_bzero.c ft_calloc.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c
+MEM_SRCS := $(MEM_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#num--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NUM_FILES := ft_itoa.c ft_itoshex.c ft_precisely_itolhex.c ft_precisely_utoa.c ft_get_digit_cnt.c ft_itolhex.c ft_precisely_itoa.c ft_precisely_itoshex.c ft_utoa.c
+NUM_SRCS := $(NUM_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#str--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+STR_FILES := ft_atoi.c ft_calc_next_chr.c ft_chrset.c ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_calc_next_str.c ft_contain.c ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_chr_to_str.c ft_create_chain.c ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c
+STR_SRCS := $(STR_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#util--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UTIL_FILES := ft_all.c ft_any.c ft_max.c ft_min.c ft_tolower.c ft_toupper.c
+UTIL_SRCS := $(UTIL_FILES)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SRCS := $(addprefix io/,$(IO_SRCS)) $(addprefix is/,$(IS_SRCS)) $(addprefix lst/,$(LST_SRCS)) $(addprefix mem/,$(MEM_SRCS)) $(addprefix num/,$(NUM_SRCS)) $(addprefix str/,$(STR_SRCS)) $(addprefix util/,$(UTIL_SRCS))
+OBJS := $(SRCS:.c=.o)
 
 all: $(NAME) 
 
-$(NAME): $(OBJS) $(ORIGINAL_OBJS) $(BONUS_OBJS)
-	ar rcs $(NAME) $(OBJS) $(ORIGINAL_OBJS)  $(BONUS_OBJS)
-
+$(NAME): $(OBJS) 
+	ar rcs $(NAME) $(OBJS)
 .c.o: 
-	$(CC) $(CFLAGS) -c $< -o $@
-
-bonus:
-	@make WITH_BONUS=1 all
-
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 clean: 
-	rm -f $(OBJS) $(BONUS_OBJS) $(ORIGINAL_OBJS) libft.so a.out 
-
+	rm -f $(OBJS)
 fclean: clean
 	rm -f $(NAME)
-
 re: fclean all
-
-.PHONY: all clean fclean re bonus 
+.PHONY: all clean fclean re 

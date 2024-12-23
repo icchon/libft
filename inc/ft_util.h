@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_util.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:33 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/22 15:10:04 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef UTIL_H
+# define UTIL_H
 
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
+# include <limits.h>
+# include <stdarg.h>
+
+int	ft_min(int argn, ...);
+int	ft_max(int argn, ...);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
+int	ft_all(char *src, int (*f)(int));
+int	ft_any(char *src, int (*f)(int));
 
 #endif

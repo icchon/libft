@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:33 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/11/12 09:27:22 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/22 14:28:17 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_util.h"
 
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
+int	ft_any(char *src, int (*f)(int))
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (src[i])
+	{
+		if ((*f)(src[i]))
+		{
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}

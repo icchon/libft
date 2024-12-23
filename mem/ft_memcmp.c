@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 15:07:33 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/10/13 16:15:20 by icchon            #+#    #+#             */
+/*   Updated: 2024/12/22 14:12:15 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_mem.h"
 
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t		i;
+	const char	*ptr1;
+	const char	*ptr2;
 
-#endif
+	if (n == 0)
+		return (0);
+	ptr1 = (const char *)s1;
+	ptr2 = (const char *)s2;
+	i = 0;
+	while (ptr1[i] == ptr2[i] && i < n - 1)
+	{
+		i++;
+	}
+	return ((unsigned char)ptr1[i] - (unsigned char)ptr2[i]);
+}
