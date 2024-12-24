@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_lst.h"
+#include <stdio.h>
 
 t_twlist	*ft_twlsthead(t_twlist *lst)
 {

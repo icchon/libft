@@ -16,7 +16,6 @@
 t_twlist	*ft_twlstlast(t_twlist *lst)
 {
 	t_twlist	*node;
-	void		*content;
 
 	if (lst == NULL)
 		return (lst);
@@ -26,7 +25,6 @@ t_twlist	*ft_twlstlast(t_twlist *lst)
 	}
 	while (node->next != NULL)
 	{
-		content = node->content;
 		node = node->next;
 	}
 	return (node);

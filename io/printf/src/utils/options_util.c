@@ -96,7 +96,7 @@ t_options	*parse_command(char *command, va_list ap)
 	if (!ft_contain(command, '.'))
 		return (ft_memset(&ops->prec, -1, 1), ops);
 	prec_str = ft_strchr(command, '.') + 1;
-	ops->prec = ft_atoi(ft_strchr(command, '.') + 1);
+	ops->prec = ft_atoi(prec_str);
 	return (ops);
 }
 

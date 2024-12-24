@@ -14,8 +14,11 @@
 
 void	ft_twlstadd_front(t_twlist **lst, t_twlist *new)
 {
-	new->next = ft_twlsthead(*lst);
+	if (new == NULL)
+		return ;
+	new->next = *lst;
 	new->prev = NULL;
+	if (*lst != NULL)
+		(*lst)->prev = new;
 	*lst = new;
-	return ;
 }

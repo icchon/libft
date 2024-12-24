@@ -15,7 +15,6 @@
 void	move_flg_to_left(char *output_str)
 {
 	size_t	len;
-	size_t	flg_idx;
 	char	flg;
 	size_t	i;
 
@@ -26,7 +25,6 @@ void	move_flg_to_left(char *output_str)
 		if (ft_ismatch(output_str[i], 3, ' ', '+', '-'))
 		{
 			flg = output_str[i];
-			flg_idx = i;
 			while (i >= 1)
 			{
 				output_str[i] = output_str[i - 1];
