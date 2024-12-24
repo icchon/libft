@@ -28,5 +28,6 @@ int	ft_compress(int *arr, int n)
 		arr[i] = index;
 		i++;
 	}
+	free(copied_arr);
 	return (m);
 }
