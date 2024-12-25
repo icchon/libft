@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is.h                                            :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:02:20 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/25 15:26:56 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/25 14:00:34 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/25 14:04:40 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_IS_H
-# define FT_IS_H
+#include "ft_str.h"
 
-# include <limits.h>
-# include <stdarg.h>
+long	ft_atol(const char *nptr)
+{
+	int			i;
+	int			sign;
+	long long	res;
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_ismatch(int x, int argn, ...);
-int	ft_ischain(char *src, char c);
-int	ft_issign(int c);
-int	ft_isspace(int c);
-int	ft_isint(const char *nptr);
-
-#endif
+	i = 0;
+	sign = 1;
+	res = 0;
+	while (ft_isspace(nptr[i]))
+		i++;
+	if (ft_issign(nptr[i]))
+		if (nptr[i++] == '-')
+			sign *= -1;
+	while (ft_isdigit(nptr[i]))
+	{
+		res = res * 10 + sign * (nptr[i++] - '0');
+		if (res >= LONG_MAX || res <= LONG_MIN)
+		{
+			break ;
+		}
+	}
+	return ((long)res);
+}

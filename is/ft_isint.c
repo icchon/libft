@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 18:10:11 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/25 14:07:20 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/25 14:06:45 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/25 15:28:20 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_is.h"
+#include <stdio.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_isint(const char *nptr)
 {
 	int			i;
 	int			sign;
@@ -26,17 +27,17 @@ int	ft_atoi(const char *nptr)
 	if (ft_issign(nptr[i]))
 		if (nptr[i++] == '-')
 			sign *= -1;
-	while (ft_isdigit(nptr[i]))
+	while (nptr[i])
 	{
-		res = res * 10 + sign * (nptr[i++] - '0');
-		if (res >= LONG_MAX || res <= LONG_MIN)
+		if (!ft_isdigit(nptr[i]))
 		{
-			if (res >= LONG_MAX)
-				res = LONG_MAX;
-			if (res <= LONG_MIN)
-				res = LONG_MIN;
-			break ;
+			return (0);
+		}
+		res = res * 10 + sign * (nptr[i++] - '0');
+		if (res > INT_MAX || res < INT_MIN)
+		{
+			return (0);
 		}
 	}
-	return ((int)res);
+	return (1);
 }

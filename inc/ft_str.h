@@ -6,18 +6,20 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/22 14:56:34 by kaisobe          ###   ########.fr       */
+/*   Updated: 2024/12/25 14:29:25 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STR_H
 # define FT_STR_H
 
+# include "ft_is.h"
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
 
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
@@ -26,6 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
+size_t	ft_strslen(const char **strs);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

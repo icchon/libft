@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is.h                                            :+:      :+:    :+:   */
+/*   ft_setval.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/22 14:02:20 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/25 15:26:56 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/25 13:11:06 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/25 14:29:59 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_IS_H
-# define FT_IS_H
+#include "ft_util.h"
 
-# include <limits.h>
-# include <stdarg.h>
-
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_ismatch(int x, int argn, ...);
-int	ft_ischain(char *src, char c);
-int	ft_issign(int c);
-int	ft_isspace(int c);
-int	ft_isint(const char *nptr);
-
-#endif
+void	ft_setval(int *ptr, int val)
+{
+	*ptr = val;
+	return ;
+}

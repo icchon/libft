@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 18:54:00 by kaisobe          ###   ########.fr       */
+/*   Updated: 2024/12/25 13:13:51 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int		ft_all(char *src, int (*f)(int));
 int		ft_any(char *src, int (*f)(int));
 int		ft_swap(void *a, void *b, size_t n);
 void	ft_exfree(int argn, ...);
+void	ft_setval(int *ptr, int val);
 
 #endif
