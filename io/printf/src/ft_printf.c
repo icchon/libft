@@ -68,28 +68,6 @@ static t_list	*create_variable(const char *fmt, int *i, t_list **head,
 	return ((*i)++, free(input_str), node);
 }
 
-static void	free_all(t_list *lst)
-{
-	t_block	*block;
-	t_list	*pre;
-
-	while (lst != NULL)
-	{
-		block = (t_block *)lst->content;
-		if (block == NULL)
-			return ;
-		if (block->output_str != NULL)
-			free(block->output_str);
-		pre = lst;
-		lst = lst->next;
-		if (block->ops != NULL)
-			free(block->ops);
-		free(block);
-		free(pre);
-	}
-	return ;
-}
-
 static t_list	*create_all_blocks(const char *fmt, va_list ap)
 {
 	t_list	*head;
@@ -111,6 +89,35 @@ static t_list	*create_all_blocks(const char *fmt, va_list ap)
 		}
 	}
 	return (head);
+}
+
+int	ft_dprintf(int fd, const char *fmt, ...)
+{
+	va_list	ap;
+	int		printed_len;
+	t_list	*lst;
+	t_list	*node;
+	t_block	*block;
+
+	va_start(ap, fmt);
+	lst = create_all_blocks(fmt, ap);
+	if (lst == NULL)
+		return (-1);
+	va_end(ap);
+	printed_len = 0;
+	node = lst;
+	while (node != NULL)
+	{
+		block = (t_block *)(node->content);
+		if (write(fd, block->output_str, block->length
+				+ (block->ops->spec == CHAR && block->length == 0)) < 0)
+			return (free_all(lst), -1);
+		printed_len += block->length + (block->ops->spec == CHAR
+				&& block->length == 0);
+		node = node->next;
+	}
+	free_all(lst);
+	return (printed_len);
 }
 
 int	ft_printf(const char *fmt, ...)
