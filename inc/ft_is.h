@@ -26,5 +26,6 @@ int	ft_ischain(char *src, char c);
 int	ft_issign(int c);
 int	ft_isspace(int c);
 int	ft_isint(const char *nptr);
+int	ft_isinrange(int x, int left, int right);
 
 #endif

@@ -16,12 +16,12 @@ IO_SRCS := $(IO_FILES) $(addprefix printf/,$(PRINTF_SRCS))
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #is--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-IS_FILES := ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischain.c ft_isdigit.c ft_ismatch.c ft_isprint.c ft_isspace.c ft_issign.c ft_isint.c 
+IS_FILES := ft_isinrange.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischain.c ft_isdigit.c ft_ismatch.c ft_isprint.c ft_isspace.c ft_issign.c ft_isint.c 
 IS_SRCS := $(IS_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #lst--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-LST_FILES := ft_lstadd_back.c ft_lstdelone.c ft_lstmap.c ft_twlstadd_back.c ft_twlstdelone.c ft_twlstnew.c ft_lstadd_front.c ft_lstiter.c ft_lstnew.c ft_twlstadd_front.c ft_twlsthead.c ft_twlstsize.c ft_lstclear.c ft_lstlast.c ft_lstsize.c ft_twlstclear.c ft_twlstlast.c ft_issortedtwlst.c
+LST_FILES := ft_twlstget.c ft_lstadd_back.c ft_lstdelone.c ft_lstmap.c ft_twlstadd_back.c ft_twlstdelone.c ft_twlstnew.c ft_lstadd_front.c ft_lstiter.c ft_lstnew.c ft_twlstadd_front.c ft_twlsthead.c ft_twlstsize.c ft_lstclear.c ft_lstlast.c ft_lstsize.c ft_twlstclear.c ft_twlstlast.c ft_issortedtwlst.c
 LST_SRCS := $(LST_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

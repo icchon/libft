@@ -16,8 +16,8 @@
 # include "ft_algo.h"
 # include <stdlib.h>
 
-int	*dup_arr(int *arr, int n);
+int	*ft_dup_arr(int *arr, int n);
 int	ft_indexof(int *arr, int n, int target);
-int	unique_arr(int *arr, int n);
+int	ft_unique_arr(int *arr, int n);
 
 #endif

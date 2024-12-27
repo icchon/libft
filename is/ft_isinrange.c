@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dup_arr.c                                       :+:      :+:    :+:   */
+/*   ft_isinrange.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icchon <icchon@student.42.fr>              #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 23:38:41 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/23 23:38:57 by kaisobe          ###   ########.fr       */
+/*   Created: 2024-12-26 08:29:50 by icchon            #+#    #+#             */
+/*   Updated: 2024-12-26 08:29:50 by icchon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_arr.h"
+#include "ft_is.h"
 
-int	*ft_dup_arr(int *arr, int n)
+int	ft_isinrange(int x, int left, int right)
 {
-	int	*copied_arr;
-	int	i;
-
-	copied_arr = (int *)malloc(sizeof(int) * n);
-	i = 0;
-	while (i < n)
-	{
-		copied_arr[i] = arr[i];
-		i++;
-	}
-	return (copied_arr);
+	return (left <= x && x <= right);
 }

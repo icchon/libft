@@ -13,6 +13,8 @@
 #ifndef FT_LST_H
 # define FT_LST_H
 
+# include "ft_algo.h"
+# include <limits.h>
 # include <stddef.h>
 # include <stdlib.h>
 
@@ -49,5 +51,6 @@ t_twlist			*ft_twlsthead(t_twlist *lst);
 t_twlist			*ft_twlstnew(void *content);
 int					ft_twlstsize(t_twlist *lst);
 int					ft_issortedtwlst(t_twlist *lst, int reversed);
+t_twlist			*ft_twlstget(t_twlist *lst, int index);
 
 #endif

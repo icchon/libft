@@ -81,6 +81,7 @@ typedef struct s_block
 }				t_block;
 
 int				ft_printf(const char *fmt, ...);
+int				ft_dprintf(int fd, const char *fmt, ...);
 int				calc_output_length(t_options *ops, char *input_str);
 
 char			*create_c_arg_handler(va_list ap, t_options *ops);
@@ -111,5 +112,6 @@ void			move_flg_to_left(char *output_str);
 void			move_hex_prefix_to_left(char *output_str, char *prefix);
 
 t_block			*create_block(t_options *ops, char *input_str);
+void			free_all(t_list *lst);
 
 #endif
