@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_normalizequat.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/31 11:27:04 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/31 09:50:15 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/31 11:11:15 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_quat.h"
 
-# include "inc/ft_algo.h"
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_quat.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
-# include "inc/ft_vec.h"
+t_quat	ft_normalize_quat(t_quat q)
+{
+	double	norm;
 
-#endif
+	norm = sqrt((q.r * q.r) + (q.i * q.i) + (q.j * q.j) + (q.k * q.k));
+	return (ft_scale_quat(q, 1 / norm));
+}

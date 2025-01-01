@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_scalequat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/31 11:27:04 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/31 09:49:57 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/31 11:10:54 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_quat.h"
 
-# include "inc/ft_algo.h"
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_quat.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
-# include "inc/ft_vec.h"
+t_quat	ft_scale_quat(t_quat q, double a)
+{
+	t_quat	res;
 
-#endif
+	res.r = q.r * a;
+	res.i = q.i * a;
+	res.j = q.j * a;
+	res.k = q.k * a;
+	return (res);
+}

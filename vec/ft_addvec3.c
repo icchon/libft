@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_addvec3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/31 11:27:04 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/31 09:45:09 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/31 11:11:37 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_vec.h"
 
-# include "inc/ft_algo.h"
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_quat.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
-# include "inc/ft_vec.h"
-
-#endif
+t_vector3	ft_add_vec3(t_vector3 v1, t_vector3 v2)
+{
+	return (ft_new_vec3(v1.x + v2.x, v1.y + v2.y, v1.z + v2.z));
+}

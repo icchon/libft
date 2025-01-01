@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_scalarvec3.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/31 11:27:04 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/31 09:47:25 by kaisobe           #+#    #+#             */
+/*   Updated: 2024/12/31 18:53:31 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_vec.h"
 
-# include "inc/ft_algo.h"
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_quat.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
-# include "inc/ft_vec.h"
-
-#endif
+t_vector3	ft_scalar_vec3(t_vector3 v, double a)
+{
+	return (ft_new_vec3(v.x * a, v.y * a, v.z * a));
+}

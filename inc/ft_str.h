@@ -6,12 +6,14 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/25 14:29:25 by kaisobe          ###   ########.fr       */
+/*   Updated: 2024/12/29 23:12:06 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STR_H
 # define FT_STR_H
+
+# define BUFFER_SIZE 10000
 
 # include "ft_is.h"
 # include <limits.h>
@@ -41,5 +43,6 @@ char	*ft_chr_to_str(char c);
 int		ft_calc_next_str(char *src, char *set);
 char	*ft_create_chain(char c, int n);
 void	ft_chrset(char *s, char c, int n);
+int		ft_atoi_base(char *str, char *base);
 
 #endif
