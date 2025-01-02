@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 13:56:41 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/28 14:30:15 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/02 09:13:27 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_IO_H
 
 # include "ft_printf.h"
+# include <stdio.h>
 # include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd);
