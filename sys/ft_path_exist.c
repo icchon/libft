@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_expanded_env.c                              :+:      :+:    :+:   */
+/*   ft_path_exist.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 13:56:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/03 13:56:16 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/03 13:57:26 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/04 07:49:15 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_sys.h"
 
-char	**ft_get_expanded_env(char *key, char sep)
+int	ft_path_exist(char *path)
 {
-	char	*value;
-	char	**expanded_env;
+	int	res;
 
-	value = ft_get_env(key);
-	if (!value)
-		return (NULL);
-	expanded_env = ft_split(value, sep);
-	if (!expanded_env)
-		return (NULL);
-	return (expanded_env);
+	res = access(path, F_OK);
+	if (res == 0)
+		return (1);
+	else
+		return (0);
 }

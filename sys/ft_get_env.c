@@ -6,11 +6,11 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:55:30 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/03 13:55:40 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/04 07:48:59 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_sys.h"
 
 char	*ft_get_env(char *key)
 {

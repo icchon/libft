@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/03 14:01:56 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/04 07:40:31 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,5 @@ int		ft_calc_next_str(char *src, char *set);
 char	*ft_create_chain(char c, int n);
 void	ft_chrset(char *s, char c, int n);
 int		ft_atoi_base(char *str, char *base);
-char	*ft_get_env(char *key);
-char	**ft_get_expanded_env(char *key, char sep);
-char	**ft_get_expanded_path(void);
-char	*ft_join_path(char *lower, char *upper);
-char	*ft_get_absolute_path(char *relative_path);
-int		ft_path_exist(char *path);
 
 #endif

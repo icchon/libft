@@ -6,11 +6,11 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:57:47 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/03 13:57:54 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/04 07:48:56 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_sys.h"
 
 char	*ft_get_absolute_path(char *relative_path)
 {

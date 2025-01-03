@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_join_path.c                                     :+:      :+:    :+:   */
+/*   ft_create_file.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 13:57:01 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/03 13:57:07 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/04 07:37:32 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/04 07:37:44 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_sys.h"
 
-char	*ft_join_path(char *lower, char *upper)
+int	ft_create_file(char *filename)
 {
-	char	*res;
-	char	*tmp;
-
-	tmp = ft_strjoin(lower, "/");
-	if (tmp == NULL)
-		return (NULL);
-	res = ft_strjoin(tmp, upper);
-	free(tmp);
-	return (res);
+	return (open(filename, O_CREAT, S_IRGRP | S_IROTH | S_IWUSR | S_IRUSR));
 }
