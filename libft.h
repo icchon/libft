@@ -6,22 +6,23 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 15:20:46 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/31 11:27:04 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/04 08:32:06 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "inc/ft_algo.h"
-# include "inc/ft_io.h"
-# include "inc/ft_is.h"
-# include "inc/ft_mem.h"
-# include "inc/ft_num.h"
-# include "inc/ft_printf.h"
-# include "inc/ft_quat.h"
-# include "inc/ft_str.h"
-# include "inc/ft_util.h"
-# include "inc/ft_vec.h"
+# include "includes/ft_algo.h"
+# include "includes/ft_io.h"
+# include "includes/ft_is.h"
+# include "includes/ft_mem.h"
+# include "includes/ft_num.h"
+# include "includes/ft_printf.h"
+# include "includes/ft_quat.h"
+# include "includes/ft_str.h"
+# include "includes/ft_sys.h"
+# include "includes/ft_util.h"
+# include "includes/ft_vec.h"
 
 #endif

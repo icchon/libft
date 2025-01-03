@@ -6,13 +6,13 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:38:02 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 07:47:41 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/04 08:33:44 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sys.h"
 
-char	*create_random_file(char *extension)
+char	*ft_create_random_file(char *extension)
 {
 	char		*out;
 	char		*tmp;
