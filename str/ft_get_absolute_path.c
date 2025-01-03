@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_get_absolute_path.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/03 13:57:47 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/03 13:57:54 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_get_absolute_path(char *relative_path)
 {
-	char	*res;
-	int		length;
+	char	**expanded_path;
 	int		i;
+	char	*path;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
+	if (ft_path_exist(relative_path))
+		return (ft_strdup(relative_path));
+	expanded_path = ft_get_expanded_path();
+	if (!expanded_path)
 		return (NULL);
-	}
 	i = 0;
-	while (i < length)
+	while (expanded_path[i])
 	{
-		res[i] = s[start + i];
+		path = ft_join_path(expanded_path[i], relative_path);
+		if (ft_path_exist(path))
+		{
+			ft_free_strs(expanded_path);
+			return (path);
+		}
+		free(path);
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
+	ft_free_strs(expanded_path);
+	return (NULL);
 }

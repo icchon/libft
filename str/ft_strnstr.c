@@ -6,34 +6,11 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/13 17:49:26 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 14:59:35 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/03 14:02:57 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
-
-static int	ft_min(int argn, ...)
-{
-	va_list	ap;
-	int		minimum;
-	int		tmp;
-	int		i;
-
-	i = 0;
-	va_start(ap, argn);
-	minimum = INT_MAX;
-	while (i < argn)
-	{
-		tmp = va_arg(ap, int);
-		if (tmp < minimum)
-		{
-			minimum = tmp;
-		}
-		i++;
-	}
-	va_end(ap);
-	return (minimum);
-}
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {

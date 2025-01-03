@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/02 13:12:51 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/03 14:01:56 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # define BUFFER_SIZE 1000000
 
 # include "ft_is.h"
+# include "ft_util.h"
 # include <limits.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
@@ -44,5 +46,11 @@ int		ft_calc_next_str(char *src, char *set);
 char	*ft_create_chain(char c, int n);
 void	ft_chrset(char *s, char c, int n);
 int		ft_atoi_base(char *str, char *base);
+char	*ft_get_env(char *key);
+char	**ft_get_expanded_env(char *key, char sep);
+char	**ft_get_expanded_path(void);
+char	*ft_join_path(char *lower, char *upper);
+char	*ft_get_absolute_path(char *relative_path);
+int		ft_path_exist(char *path);
 
 #endif
