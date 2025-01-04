@@ -16,7 +16,7 @@ IO_SRCS := $(IO_FILES) $(addprefix printf/,$(PRINTF_SRCS))
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #is--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-IS_FILES := ft_isinrange.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischain.c ft_isdigit.c ft_ismatch.c ft_isprint.c ft_isspace.c ft_issign.c ft_isint.c 
+IS_FILES := ft_isequal.c ft_isinrange.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischain.c ft_isdigit.c ft_ismatch.c ft_isprint.c ft_isspace.c ft_issign.c ft_isint.c 
 IS_SRCS := $(IS_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -36,12 +36,12 @@ NUM_SRCS := $(NUM_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #str--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-STR_FILES := ft_atoi_base.c ft_strslen.c ft_atoi.c ft_calc_next_chr.c ft_chrset.c ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_calc_next_str.c ft_contain.c ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_chr_to_str.c ft_create_chain.c ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_atol.c
+STR_FILES := ft_strjoin_safe.c ft_atoi_base.c ft_strslen.c ft_atoi.c ft_calc_next_chr.c ft_chrset.c ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_calc_next_str.c ft_contain.c ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_chr_to_str.c ft_create_chain.c ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_atol.c
 STR_SRCS := $(STR_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #util--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-UTIL_FILES := ft_free_strs.c ft_all.c ft_any.c ft_max.c ft_min.c ft_tolower.c ft_toupper.c ft_swap.c ft_exfree.c ft_setval.c
+UTIL_FILES := ft_abs.c ft_free_strs.c ft_all.c ft_any.c ft_max.c ft_min.c ft_tolower.c ft_toupper.c ft_swap.c ft_exfree.c ft_setval.c
 UTIL_SRCS := $(UTIL_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

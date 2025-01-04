@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 16:40:59 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/04 16:05:37 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/04 14:13:03 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/04 14:13:11 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_util.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_abs(int a)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
+	if (a < 0)
+		return (-1 * a);
+	return (a);
 }

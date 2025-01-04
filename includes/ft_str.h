@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 07:40:31 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/04 18:36:32 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # define BUFFER_SIZE 1000000
 
 # include "ft_is.h"
+# include "ft_str.h"
 # include "ft_util.h"
 # include <limits.h>
 # include <stdarg.h>
@@ -46,5 +47,6 @@ int		ft_calc_next_str(char *src, char *set);
 char	*ft_create_chain(char c, int n);
 void	ft_chrset(char *s, char c, int n);
 int		ft_atoi_base(char *str, char *base);
+char	*ft_strjoin_safe(char *s1, char *s2, int is_free1, int is_free2);
 
 #endif

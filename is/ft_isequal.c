@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isequal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 16:40:59 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/04 16:05:37 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/04 10:12:46 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/04 10:14:44 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_is.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isequal(char *s1, char *s2)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
+	if (ft_strlen(s1) != ft_strlen(s2))
 		return (0);
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
+	if (ft_strncmp(s1, s2, ft_strlen(s1)) != 0)
+		return (0);
+	return (1);
 }
