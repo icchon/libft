@@ -11,7 +11,7 @@ PRINTF_UTIL_FILES := block_util.c init_util.c options_util.c processing_util1.c 
 PRINTF_SRCS := $(addprefix src/spec_funcs/,$(PRINTF_SPEC_FILES)) $(addprefix src/utils/,$(PRINTF_UTIL_FILES)) src/ft_printf.c
 ##
 
-IO_FILES := ft_print_strs.c get_next_line.c ft_putchar.c ft_putendl_fd.c ft_putnbr.c ft_putshex.c ft_putstr_fd.c ft_putchar_fd.c ft_putlhex.c ft_putnbr_fd.c ft_putstr.c ft_print_arr.c 
+IO_FILES := ft_print_strs.c get_next_line.c ft_print_arr.c 
 IO_SRCS := $(IO_FILES) $(addprefix printf/,$(PRINTF_SRCS))
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ STR_SRCS := $(STR_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #util--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-UTIL_FILES := ft_abs.c ft_free_strs.c ft_all.c ft_any.c ft_max.c ft_min.c ft_tolower.c ft_toupper.c ft_swap.c ft_exfree.c ft_setval.c
+UTIL_FILES := ft_abs.c ft_free_strs.c ft_all.c ft_any.c ft_max.c ft_min.c ft_swap.c ft_exfree.c ft_setval.c
 UTIL_SRCS := $(UTIL_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

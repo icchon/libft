@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:27:05 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 14:13:25 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:45:12 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 
 int		ft_min(int argn, ...);
 int		ft_max(int argn, ...);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
 int		ft_all(char *src, int (*f)(int));
 int		ft_any(char *src, int (*f)(int));
 int		ft_swap(void *a, void *b, size_t n);

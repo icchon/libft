@@ -6,19 +6,19 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:57:47 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 17:15:49 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:30:10 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sys.h"
 
-char	*ft_get_absolute_path(char *relative_path)
+char	*ft_get_absolute_path(char *relative_path, char **env)
 {
 	char	**expanded_path;
 	int		i;
 	char	*path;
 
-	expanded_path = ft_get_expanded_path();
+	expanded_path = ft_get_expanded_path(env);
 	if (!expanded_path)
 		return (NULL);
 	i = 0;

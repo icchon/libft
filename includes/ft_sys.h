@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:40:46 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 07:48:08 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/07 20:30:49 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@
 # include <unistd.h>
 
 int		ft_create_file(char *filename);
-char	*ft_get_env(char *key);
-char	*ft_get_absolute_path(char *relative_path);
+char	*ft_get_env(char *key, char **env);
+char	*ft_get_absolute_path(char *relative_path, char **env);
 char	*ft_create_random_file(char *extension);
-char	**ft_get_expanded_env(char *key, char sep);
-char	**ft_get_expanded_path(void);
+char	**ft_get_expanded_env(char *key, char sep, char **env);
+char	**ft_get_expanded_path(char **env);
 char	*ft_join_path(char *lower, char *upper);
 int		ft_path_exist(char *path);
 
