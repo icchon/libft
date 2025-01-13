@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 07:38:02 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 18:38:20 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/13 20:56:27 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_create_random_file(char *extension)
 	if (extension)
 		out = ft_strjoin_safe(tmp, extension, 1, 0);
 	else
-		out = tmp;
+		out = ft_strdup(tmp);
 	if (ft_path_exist(out))
 	{
 		free(out);

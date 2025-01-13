@@ -6,14 +6,14 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 18:36:32 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/13 21:29:26 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_STR_H
 # define FT_STR_H
 
-# define BUFFER_SIZE 1000000
+# define BUFFER_SIZE 100000
 
 # include "ft_is.h"
 # include "ft_str.h"
