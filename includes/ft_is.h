@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:02:20 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/04 16:09:47 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/21 07:47:24 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,17 @@
 # include <stdint.h>
 # include <stdlib.h>
 
-typedef struct s_vars
-{
-	char	**cmds;
-	char	***cmd_args;
-	char	*infile;
-	char	*outfile;
-	int		is_heredoc;
-	size_t	cmd_cnt;
-}			t_vars;
-
-int			ft_isalnum(int c);
-int			ft_isalpha(int c);
-int			ft_isascii(int c);
-int			ft_isdigit(int c);
-int			ft_isprint(int c);
-int			ft_ismatch(int x, int argn, ...);
-int			ft_ischain(char *src, char c);
-int			ft_issign(int c);
-int			ft_isspace(int c);
-int			ft_isint(const char *nptr);
-int			ft_isinrange(int x, int left, int right);
-int			ft_isequal(char *s1, char *s2);
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_isdigit(int c);
+int	ft_isprint(int c);
+int	ft_ismatch(int x, int argn, ...);
+int	ft_ischain(char *src, char c);
+int	ft_issign(int c);
+int	ft_isspace(int c);
+int	ft_isint(const char *nptr);
+int	ft_isinrange(int x, int left, int right);
+int	ft_isequal(char *s1, char *s2);
 
 #endif
