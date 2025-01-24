@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 13:55:30 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/05 07:57:58 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/24 12:10:21 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ char	*ft_get_env(char *key, char **env)
 		to_search = ft_strjoin(key, "=");
 		if (!to_search)
 			return (NULL);
-		if (ft_strncmp(to_search, __environ[i], ft_strlen(to_search)) == 0)
+		if (ft_strncmp(to_search, env[i], ft_strlen(to_search)) == 0)
 		{
 			len = ft_strlen(to_search);
 			free(to_search);
-			return (__environ[i] + len);
+			return (env[i] + len);
 		}
+		free(to_search);
 		i++;
 	}
 	return (NULL);
