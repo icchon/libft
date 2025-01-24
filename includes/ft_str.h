@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:21:07 by kaisobe           #+#    #+#             */
-/*   Updated: 2025/01/13 21:29:26 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/24 09:21:15 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ char	*ft_create_chain(char c, int n);
 void	ft_chrset(char *s, char c, int n);
 int		ft_atoi_base(char *str, char *base);
 char	*ft_strjoin_safe(char *s1, char *s2, int is_free1, int is_free2);
+void	free_strs(char **strs);
 
 #endif

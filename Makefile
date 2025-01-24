@@ -36,7 +36,7 @@ NUM_SRCS := $(NUM_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #str--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-STR_FILES := ft_strjoin_safe.c ft_atoi_base.c ft_strslen.c ft_atoi.c ft_calc_next_chr.c ft_chrset.c ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_calc_next_str.c ft_contain.c ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_chr_to_str.c ft_create_chain.c ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_atol.c
+STR_FILES := ft_free_strs.c ft_strjoin_safe.c ft_atoi_base.c ft_strslen.c ft_atoi.c ft_calc_next_chr.c ft_chrset.c ft_split.c ft_striteri.c ft_strlcpy.c ft_strncmp.c ft_strtrim.c ft_calc_next_str.c ft_contain.c ft_strchr.c ft_strjoin.c ft_strlen.c ft_strnstr.c ft_substr.c ft_chr_to_str.c ft_create_chain.c ft_strdup.c ft_strlcat.c ft_strmapi.c ft_strrchr.c ft_atol.c
 STR_SRCS := $(STR_FILES)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
