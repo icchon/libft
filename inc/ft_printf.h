@@ -80,6 +80,8 @@ typedef struct s_block
 	int			length;
 }				t_block;
 
+typedef char	*(*t_create_f)(va_list x, t_options *ops);
+
 int				ft_printf(const char *fmt, ...);
 int				calc_output_length(t_options *ops, char *input_str);
 
@@ -106,7 +108,7 @@ t_options		*create_new_options(void);
 
 void			print_options_for_debug(t_options *ops);
 void			update_options(t_options *ops);
-void			init_f_arr(char *(*p[])(va_list x, t_options *o));
+void			init_f_arr(t_create_f p[ASCII_SIZE]);
 void			move_flg_to_left(char *output_str);
 void			move_hex_prefix_to_left(char *output_str, char *prefix);
 

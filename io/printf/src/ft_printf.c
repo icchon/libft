@@ -12,8 +12,6 @@
 
 #include "ft_printf.h"
 
-static char		*(*g_create_funcs[(ASCII_SIZE)])(va_list x, t_options *o);
-
 static t_list	*create_ordinary(const char *fmt, int *i, t_list **head)
 {
 	char		*input_str;
@@ -46,12 +44,13 @@ static t_list	*create_variable(const char *fmt, int *i, t_list **head,
 	t_block		*block;
 	char		*input_str;
 	t_list		*node;
+	t_create_f	create_funcs[ASCII_SIZE];
 
-	(*i)++;
+	init_f_arr(((*i)++, create_funcs));
 	ops = create_options_obj((char *)&fmt[*i], ap);
 	if (ops == NULL)
 		return (NULL);
-	input_str = g_create_funcs[(unsigned int)(ops->spec)](ap, ops);
+	input_str = create_funcs[(unsigned int)(ops->spec)](ap, ops);
 	if (input_str == NULL)
 		return (NULL);
 	block = create_block(ops, input_str);
@@ -92,13 +91,14 @@ static void	free_all(t_list *lst)
 
 static t_list	*create_all_blocks(const char *fmt, va_list ap)
 {
-	t_list	*head;
-	t_list	*node;
-	int		i;
+	t_list		*head;
+	t_list		*node;
+	int			i;
+	t_create_f	create_funcs[ASCII_SIZE];
 
 	i = 0;
 	head = NULL;
-	init_f_arr(g_create_funcs);
+	init_f_arr(create_funcs);
 	while (fmt[i])
 	{
 		if (fmt[i] == '%')
