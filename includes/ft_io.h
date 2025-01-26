@@ -1,35 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_io.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/22 13:56:41 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/07 20:47:09 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#ifndef FT_IO_H
+# define FT_IO_H
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char	*res;
-	int		length;
-	int		i;
+# include "ft_printf.h"
+# include <stdio.h>
+# include <unistd.h>
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (i < length)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
-}
+void	ft_putstr(char *s);
+void	ft_print_arr(int *arr, int n);
+char	*get_next_line(int fd);
+void	ft_print_strs(char **strs);
+
+#endif

@@ -6,34 +6,11 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 07:14:19 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 14:56:37 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/03 14:02:33 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
-
-static int	ft_max(int argn, ...)
-{
-	va_list	ap;
-	int		maximum;
-	int		tmp;
-	int		i;
-
-	i = 0;
-	va_start(ap, argn);
-	maximum = INT_MIN;
-	while (i < argn)
-	{
-		tmp = va_arg(ap, int);
-		if (tmp > maximum)
-		{
-			maximum = tmp;
-		}
-		i++;
-	}
-	va_end(ap);
-	return (maximum);
-}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

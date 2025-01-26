@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isinrange.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
+/*   By: icchon <icchon@student.42.fr>              #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/13 16:40:59 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/04 16:05:37 by kaisobe          ###   ########.fr       */
+/*   Created: 2024-12-26 08:29:50 by icchon            #+#    #+#             */
+/*   Updated: 2024-12-26 08:29:50 by icchon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_is.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isinrange(int x, int left, int right)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
+	return (left <= x && x <= right);
 }

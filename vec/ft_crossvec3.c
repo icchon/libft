@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_crossvec3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/01 12:34:17 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/01 12:36:38 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_vec.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_vector3	ft_cross_vec3(t_vector3 p, t_vector3 q)
 {
-	char	*res;
-	int		length;
-	int		i;
+	t_vector3	res;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (i < length)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
+	res.x = p.y * q.z - p.z - q.y;
+	res.y = p.z * q.x - p.x * q.z;
+	res.z = p.x * q.y - p.y * q.x;
 	return (res);
 }

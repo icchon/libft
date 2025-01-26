@@ -1,41 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isint.c                                         :+:      :+:    :+:   */
+/*   ft_isequal.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 14:06:45 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/25 15:28:20 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/04 10:12:46 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/04 10:14:44 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
-#include <stdio.h>
 
-int	ft_isint(const char *nptr)
+int	ft_isequal(char *s1, char *s2)
 {
-	int			i;
-	int			sign;
-	long long	res;
-
-	i = 0;
-	sign = 1;
-	res = 0;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (ft_issign(nptr[i]))
-		if (nptr[i++] == '-')
-			sign *= -1;
-	if (!ft_isdigit(nptr[i]))
+	if (ft_strlen(s1) != ft_strlen(s2))
 		return (0);
-	while (nptr[i])
-	{
-		if (!ft_isdigit(nptr[i]))
-			return (0);
-		res = res * 10 + sign * (nptr[i++] - '0');
-		if (res > INT_MAX || res < INT_MIN)
-			return (0);
-	}
+	if (ft_strncmp(s1, s2, ft_strlen(s1)) != 0)
+		return (0);
 	return (1);
 }

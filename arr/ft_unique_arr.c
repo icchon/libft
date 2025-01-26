@@ -12,7 +12,7 @@
 
 #include "ft_arr.h"
 
-int	unique_arr(int *arr, int n)
+int	ft_unique_arr(int *arr, int n)
 {
 	int	cnt;
 	int	i;
@@ -20,7 +20,7 @@ int	unique_arr(int *arr, int n)
 	int	*copied_arr;
 
 	j = 1;
-	copied_arr = dup_arr(arr, n);
+	copied_arr = ft_dup_arr(arr, n);
 	ft_sort(copied_arr, n, 0);
 	cnt = 1;
 	i = 0;

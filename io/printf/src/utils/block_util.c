@@ -29,3 +29,25 @@ t_block	*create_block(t_options *ops, char *input_str)
 		return (NULL);
 	return (block);
 }
+
+void	free_all(t_list *lst)
+{
+	t_block	*block;
+	t_list	*pre;
+
+	while (lst != NULL)
+	{
+		block = (t_block *)lst->content;
+		if (block == NULL)
+			return ;
+		if (block->output_str != NULL)
+			free(block->output_str);
+		pre = lst;
+		lst = lst->next;
+		if (block->ops != NULL)
+			free(block->ops);
+		free(block);
+		free(pre);
+	}
+	return ;
+}

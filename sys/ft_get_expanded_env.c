@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_get_expanded_env.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/03 13:56:07 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/24 12:09:09 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_sys.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	**ft_get_expanded_env(char *key, char sep, char **env)
 {
-	char	*res;
-	int		length;
-	int		i;
+	char	*value;
+	char	**expanded_env;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
+	value = ft_get_env(key, env);
+	if (!value)
 		return (NULL);
-	}
-	i = 0;
-	while (i < length)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	expanded_env = ft_split(value, sep);
+	if (!expanded_env)
+		return (NULL);
+	return (expanded_env);
 }

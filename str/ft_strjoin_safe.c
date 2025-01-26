@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_safe.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2025/01/04 18:35:19 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/04 18:37:06 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin_safe(char *s1, char *s2, int is_free1, int is_free2)
 {
 	char	*res;
-	int		length;
-	int		i;
+	size_t	length;
+	size_t	i;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
+	length = ft_strlen(s1) + ft_strlen(s2);
 	res = (char *)malloc(sizeof(char) * (length + 1));
 	if (res == NULL)
-	{
 		return (NULL);
-	}
 	i = 0;
+	while (i < ft_strlen(s1))
+	{
+		res[i] = s1[i];
+		i++;
+	}
 	while (i < length)
 	{
-		res[i] = s[start + i];
+		res[i] = s2[i - ft_strlen(s1)];
 		i++;
 	}
 	res[i] = '\0';
+	if (is_free1 && s1)
+		free(s1);
+	if (is_free2 && s2)
+		free(s2);
 	return (res);
 }

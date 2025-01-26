@@ -6,7 +6,7 @@
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 07:24:58 by icchon            #+#    #+#             */
-/*   Updated: 2024/12/22 14:23:45 by kaisobe          ###   ########.fr       */
+/*   Updated: 2025/01/24 09:23:58 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,20 +80,6 @@ static int	ft_get_kth_word_len(char const *s, char c, int k)
 		i++;
 	}
 	return (i);
-}
-
-static void	free_strs(char **strs)
-{
-	int	i;
-
-	i = 0;
-	while (strs[i] != NULL)
-	{
-		free(strs[i]);
-		i++;
-	}
-	free(strs);
-	return ;
 }
 
 char	**ft_split(char const *s, char c)

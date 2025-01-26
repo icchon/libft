@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_rotatevec3.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/31 09:53:18 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/01 17:12:12 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_quat.h"
+#include <stdio.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_vector3	ft_rotate_vec3(t_vector3 x, t_vector3 v, double phase)
 {
-	char	*res;
-	int		length;
-	int		i;
+	t_quat	p;
+	t_quat	q;
+	t_quat	inv_q;
+	t_quat	rotated;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (i < length)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	q = ft_rotation_quat(v, phase);
+	p = ft_vec3_to_quat(x);
+	inv_q = ft_inv_quat(q);
+	rotated = ft_mul_quat(ft_mul_quat(q, p), inv_q);
+	return (ft_quat_to_vec3(rotated));
 }

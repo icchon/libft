@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/10/25 06:08:59 by icchon            #+#    #+#             */
+/*   Updated: 2025/01/02 10:34:46 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_io.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*get_next_line(int fd)
 {
-	char	*res;
-	int		length;
+	char	*line;
+	int		bytes_read;
+	char	c;
 	int		i;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
+	bytes_read = read(fd, &c, 1);
+	if (bytes_read <= 0)
 		return (NULL);
-	}
+	line = (char *)ft_calloc(BUFFER_SIZE, sizeof(char));
+	if (line == NULL)
+		return (NULL);
 	i = 0;
-	while (i < length)
+	while (1)
 	{
-		res[i] = s[start + i];
+		if (bytes_read <= 0 || c == '\n')
+			return (line);
+		line[i] = c;
 		i++;
+		bytes_read = read(fd, &c, 1);
 	}
-	res[i] = '\0';
-	return (res);
+	return (NULL);
 }

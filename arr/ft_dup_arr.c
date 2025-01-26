@@ -12,7 +12,7 @@
 
 #include "ft_arr.h"
 
-int	*dup_arr(int *arr, int n)
+int	*ft_dup_arr(int *arr, int n)
 {
 	int	*copied_arr;
 	int	i;

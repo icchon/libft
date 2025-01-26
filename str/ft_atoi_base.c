@@ -1,41 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isint.c                                         :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/25 14:06:45 by kaisobe           #+#    #+#             */
-/*   Updated: 2024/12/25 15:28:20 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/29 21:36:58 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/01 19:37:57 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_is.h"
-#include <stdio.h>
+#include "ft_str.h"
 
-int	ft_isint(const char *nptr)
+static int	indexof(char *str, char target)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == target)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+int	ft_atoi_base(char *str, char *base)
 {
 	int			i;
 	int			sign;
 	long long	res;
+	int			n_base;
 
+	n_base = (int)ft_strlen(base);
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (ft_isspace(nptr[i]))
+	while (ft_isspace(str[i]))
 		i++;
-	if (ft_issign(nptr[i]))
-		if (nptr[i++] == '-')
+	if (ft_issign(str[i]))
+		if (str[i++] == '-')
 			sign *= -1;
-	if (!ft_isdigit(nptr[i]))
-		return (0);
-	while (nptr[i])
+	while (str[i])
 	{
-		if (!ft_isdigit(nptr[i]))
-			return (0);
-		res = res * 10 + sign * (nptr[i++] - '0');
-		if (res > INT_MAX || res < INT_MIN)
-			return (0);
+		res = res * n_base + sign * (indexof(base, str[i++]));
+		if (res >= LONG_MAX || res <= LONG_MIN)
+		{
+			break ;
+		}
 	}
-	return (1);
+	return ((int)res);
 }

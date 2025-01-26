@@ -19,8 +19,8 @@ int	ft_compress(int *arr, int n)
 	int	i;
 	int	index;
 
-	copied_arr = dup_arr(arr, n);
-	m = unique_arr(copied_arr, n);
+	copied_arr = ft_dup_arr(arr, n);
+	m = ft_unique_arr(copied_arr, n);
 	i = 0;
 	while (i < n)
 	{

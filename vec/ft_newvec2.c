@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_newvec2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kaisobe <kaisobe@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 07:03:48 by icchon            #+#    #+#             */
-/*   Updated: 2025/01/03 14:03:13 by kaisobe          ###   ########.fr       */
+/*   Created: 2024/12/31 09:43:50 by kaisobe           #+#    #+#             */
+/*   Updated: 2025/01/01 19:38:18 by kaisobe          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "ft_vec.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+t_vector2	ft_new_vec2(double x, double y)
 {
-	char	*res;
-	int		length;
-	int		i;
+	t_vector2	pos;
 
-	length = ft_max(2, 0, ft_min(2, len, ft_strlen(s) - start));
-	res = (char *)malloc(sizeof(char) * (length + 1));
-	if (res == NULL)
-	{
-		return (NULL);
-	}
-	i = 0;
-	while (i < length)
-	{
-		res[i] = s[start + i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	pos.x = x;
+	pos.y = y;
+	return (pos);
 }
