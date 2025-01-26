@@ -12,13 +12,10 @@
 
 #include "ft_printf.h"
 
-void	init_f_arr(char *(*p[])(va_list x, t_options *ops))
+void	init_f_arr(t_create_f p[ASCII_SIZE])
 {
-	static int	is_initialized = 0;
-	int			i;
+	int	i;
 
-	if (is_initialized)
-		return ;
 	i = 0;
 	while (i < ASCII_SIZE)
 	{
@@ -33,6 +30,5 @@ void	init_f_arr(char *(*p[])(va_list x, t_options *ops))
 	p['x'] = create_sx_arg_handler;
 	p['X'] = create_lx_arg_handler;
 	p['%'] = create_percent_arg_handler;
-	is_initialized = 1;
 	return ;
 }
