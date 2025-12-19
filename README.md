@@ -11,25 +11,25 @@
 </p>
 <br>
 
-##  Table of Contents
+##  Contents
 
-- [ Overview](#-overview)
-- [ Features](#-features)
-- [ Getting Started](#-getting-started)
-  - [ Prerequisites](#-prerequisites)
-  - [ Installation](#-installation)
-  - [ Usage](#-usage)
-- [ License](#-license)
+- [Overview](#overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [License](#license)
 
 ---
 
-##  Overview
+## Overview
 
 `libft` は、C標準ライブラリlibcの関数を再実装し、便利な汎用関数を追加したC言語ライブラリです
 
 ---
 
-##  Features
+## Features
 
 - **algo**: アルゴリズム
 - **arr**: 配列操作
@@ -45,14 +45,14 @@
 - **vec**: 2D/3Dベクトル
 
 ---
-##  Getting Started
+## Getting Started
 
-###  Prerequisites
+### Prerequisites
 -   **C言語:** C99 標準以降
 -   **Cコンパイラ:** `cc`
 -   **ビルドツール:** GNU `make`
 
-###  Installation
+### Installation
 
 ```sh
 ❯ git clone https://github.com/icchon/libft
@@ -60,7 +60,7 @@
 ❯ make
 ```
 
-###  Usage
+### Usage
 `libft.a` を生成後、プロジェクトでインクルードして使用します。
 
 ```sh
@@ -82,7 +82,7 @@ int main(void){
 ```
 ---
 
-##  License
+## License
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
 © 2025 icchon
