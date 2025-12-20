@@ -48,9 +48,9 @@
 ## Getting Started
 
 ### Prerequisites
--   **C言語:** C99 標準以降
--   **Cコンパイラ:** `cc`
--   **ビルドツール:** GNU `make`
+-   **Clang:** (C99 or later)
+-   **cc** (17.7.0 or later)
+-   **GNU make** (3.8.1 or later)
 
 ### Installation
 
